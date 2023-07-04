@@ -1,0 +1,83 @@
+*{
+    font-size: 62.5%;
+    margin:0px;
+    padding: 0px;
+
+}
+body{
+  background-color:gray;
+  transition: 0.5s;
+}
+@font-face {
+  font-family: "MyFont";
+  src: url("retro.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face{
+  font-family: 'xoro';
+  src:url('xoro.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+h1 {
+  font-size: 5rem;
+  display: block;
+  font-family: "MyFont";
+  width: 100%;
+  margin-top: 10rem;
+  text-align: center;
+}
+ .container {
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: repeat(3, 15rem);
+      grid-template-rows: repeat(3, 15rem);
+      justify-content: center;
+    }
+    .container > div {
+      padding: 10px;
+      background-color: #EFCB68;
+      border-radius: 5px;
+      display: grid;
+      place-items: center;
+    }
+
+    .container > div {
+      font-family: xoro;
+      font-size: 10rem;
+      font-weight: bold;
+    }
+    .again-div{
+       position: relative;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       padding-top: 20px;
+    }
+    .again{
+        font-size: 5rem;
+        font-family: MyFont;
+        border-radius: 50px;
+        background-color: #EFCB68;
+        padding: 5px;
+    }
+    .again:hover{
+      background-color: aliceblue;
+      transition: 0.5s;
+      margin-top: 10px;
+    }
+    .start{
+        position: absolute;
+        font-size: 4rem;
+        font-family: MyFont;
+        top:30rem;
+        background-color: transparent;
+        padding-left: 10px;
+        width: 100%;
+        left:70%;
+    }
+    .hov:hover{
+      background-color: aliceblue;
+      transition: 0.5s;
+    }
