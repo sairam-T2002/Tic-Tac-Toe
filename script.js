@@ -29,6 +29,9 @@ function checkWin() {
     ) {
       document.querySelector(".start").textContent = "X is the winner🤑";
       document.body.style.backgroundColor = "#32b354";
+      for (let j = 0; j < 9; j++) {
+        boxes[j].removeEventListener("click", boxEventListener);
+      }
     } else if (
       boxes[a].textContent === "O" &&
       boxes[b].textContent === "O" &&
@@ -36,146 +39,52 @@ function checkWin() {
     ) {
       document.querySelector(".start").textContent = "O is the winner🤑";
       document.body.style.backgroundColor = "#32b354";
+      for (let j = 0; j < 9; j++) {
+        boxes[j].removeEventListener("click", boxEventListener);
+      }
+    }
+  }
+}
+function boxEventListener() {
+  if (this.textContent === "") {
+    if (xoro % 2 === 0) {
+      this.textContent = "X";
+      xoro++;
+      checkWin();
+    } else if (xoro % 2 !== 0) {
+      this.textContent = "O";
+      xoro++;
+      checkWin();
     }
   }
 }
 //
-box1.addEventListener("click", function () {
-  if (box1.textContent === "") {
-    if (xoro % 2 === 0) {
-      box1.textContent = "X";
-      xoro++;
-      checkWin();
-    } else if (xoro % 2 !== 0) {
-      box1.textContent = "O";
-      xoro++;
-      checkWin();
-    }
-  }
-});
+box1.addEventListener("click", boxEventListener);
 //
-box2.addEventListener("click", function () {
-  if (box2.textContent === "") {
-    if (xoro % 2 === 0) {
-      box2.textContent = "X";
-      xoro++;
-      checkWin();
-    } else if (xoro % 2 !== 0) {
-      box2.textContent = "O";
-      xoro++;
-      checkWin();
-    }
-  }
-});
+box2.addEventListener("click", boxEventListener);
 //
-box3.addEventListener("click", function () {
-  if (box3.textContent === "") {
-    if (xoro % 2 === 0) {
-      box3.textContent = "X";
-      xoro++;
-      checkWin();
-    } else if (xoro % 2 !== 0) {
-      box3.textContent = "O";
-      xoro++;
-      checkWin();
-    }
-  }
-});
+box3.addEventListener("click", boxEventListener);
 //
-box4.addEventListener("click", function () {
-  if (box4.textContent === "") {
-    if (xoro % 2 === 0) {
-      box4.textContent = "X";
-      xoro++;
-      checkWin();
-    } else if (xoro % 2 !== 0) {
-      box4.textContent = "O";
-      xoro++;
-      checkWin();
-    }
-  }
-});
+box4.addEventListener("click", boxEventListener);
 //
-box5.addEventListener("click", function () {
-  if (box5.textContent === "") {
-    if (xoro % 2 === 0) {
-      box5.textContent = "X";
-      xoro++;
-      checkWin();
-    } else if (xoro % 2 !== 0) {
-      box5.textContent = "O";
-      xoro++;
-      checkWin();
-    }
-  }
-});
+box5.addEventListener("click", boxEventListener);
 //
-box6.addEventListener("click", function () {
-  if (box6.textContent === "") {
-    if (xoro % 2 === 0) {
-      box6.textContent = "X";
-      xoro++;
-      checkWin();
-    } else if (xoro % 2 !== 0) {
-      box6.textContent = "O";
-      xoro++;
-      checkWin();
-    }
-  }
-});
+box6.addEventListener("click", boxEventListener);
 //
-box7.addEventListener("click", function () {
-  if (box7.textContent === "") {
-    if (xoro % 2 === 0) {
-      box7.textContent = "X";
-      xoro++;
-      checkWin();
-    } else if (xoro % 2 !== 0) {
-      box7.textContent = "O";
-      xoro++;
-      checkWin();
-    }
-  }
-});
+box7.addEventListener("click", boxEventListener);
 //
-box8.addEventListener("click", function () {
-  if (box8.textContent === "") {
-    if (xoro % 2 === 0) {
-      box8.textContent = "X";
-      xoro++;
-      checkWin();
-    } else if (xoro % 2 !== 0) {
-      box8.textContent = "O";
-      xoro++;
-      checkWin();
-    }
-  }
-});
+box8.addEventListener("click", boxEventListener);
 //
-box9.addEventListener("click", function () {
-  if (box9.textContent === "") {
-    if (xoro % 2 === 0) {
-      box9.textContent = "X";
-      xoro++;
-      checkWin();
-    } else if (xoro % 2 !== 0) {
-      box9.textContent = "O";
-      xoro++;
-      checkWin();
-    }
-  }
-});
+box9.addEventListener("click", boxEventListener);
+//
 document.querySelector(".again").addEventListener("click", function () {
   document.querySelector("body").style.backgroundColor = "gray";
-  box1.innerHTML = "";
-  box2.innerHTML = "";
-  box3.innerHTML = "";
-  box4.innerHTML = "";
-  box5.innerHTML = "";
-  box6.innerHTML = "";
-  box7.innerHTML = "";
-  box8.innerHTML = "";
-  box9.innerHTML = "";
-  document.querySelector(".start").innerHTML = "Start the game";
+  for (let i = 0; i < 9; i++) {
+    boxes[i].textContent = "";
+  }
+  document.querySelector(".start").textContent = "Start the game";
+  for (let j = 0; j < 9; j++) {
+    boxes[j].addEventListener("click", boxEventListener);
+  }
   xoro = 0;
 });
