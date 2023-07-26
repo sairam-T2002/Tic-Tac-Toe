@@ -1,12 +1,3 @@
-const box1 = document.querySelector(".box1");
-const box2 = document.querySelector(".box2");
-const box3 = document.querySelector(".box3");
-const box4 = document.querySelector(".box4");
-const box5 = document.querySelector(".box5");
-const box6 = document.querySelector(".box6");
-const box7 = document.querySelector(".box7");
-const box8 = document.querySelector(".box8");
-const box9 = document.querySelector(".box9");
 const boxes = document.querySelectorAll(".hov");
 let xoro = 0;
 function checkWin() {
@@ -58,25 +49,9 @@ function boxEventListener() {
     }
   }
 }
-//
-box1.addEventListener("click", boxEventListener);
-//
-box2.addEventListener("click", boxEventListener);
-//
-box3.addEventListener("click", boxEventListener);
-//
-box4.addEventListener("click", boxEventListener);
-//
-box5.addEventListener("click", boxEventListener);
-//
-box6.addEventListener("click", boxEventListener);
-//
-box7.addEventListener("click", boxEventListener);
-//
-box8.addEventListener("click", boxEventListener);
-//
-box9.addEventListener("click", boxEventListener);
-//
+boxes.forEach(box => {
+  box.addEventListener("click", boxEventListener);
+});
 document.querySelector(".again").addEventListener("click", function () {
   document.querySelector("body").style.backgroundColor = "gray";
   for (let i = 0; i < 9; i++) {
